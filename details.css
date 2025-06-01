@@ -1,0 +1,55 @@
+ /* deixar td no jeito */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ /* fundo */
+body {
+    background-color: #1b1b1b;
+    font-family: Arial, sans-serif;
+}
+
+ /*cabeçario*/
+.header {
+    background-image: url("imagems/fundo.jpg");
+    background-color: rgb(69, 138, 109);
+    padding: 20px 40px;
+    /* alinhar td */
+    display:flex;
+    height: 110px;
+    align-items: center;
+    justify-content: space-between;
+}
+ /* logo */
+.logo img{
+    border: solid 2px;
+    border-radius: 35px;
+    height: 100px;
+    box-shadow: 2px 2px 20px rgb(0, 0, 0);
+}
+ /* distancia os botão */
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+ /* botões */
+.nav-links a {
+    position: relative;
+    border: solid 2px rgb(0, 0, 0);
+    padding: 8px;
+    border-radius: 15px;
+    background-color: rgb(187, 250, 236);
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+
+/* hover do mouse*/
+
+.nav-links a:hover {
+    background-color: rgb(152, 227, 209);
+    color: #000;
+}
