@@ -29,8 +29,6 @@ body {
     /* alinhar td */
     display:flex;
     height: 110px;
-    width: 1970px; /*tamano do cabeçario*/
-    position: fixed; /*cabeçario fica preso*/
     align-items: center;
     justify-content: space-between;
 }
@@ -118,15 +116,7 @@ body {
 /*fim da separação*/
 
 /*Exibição de produtos*/
-
-/*Espaço para definir o background do texto*/
-.espaco{
-    flex: 4; /* valor (4) que esta definindo uma caixa invisivel (p)
-    para que divida o espaço flex com o P dos textos. quanto maior o numero, mais ele oculpa o espaço (flex) */;
-}
-/*Foto1*/
 .area{
-
     position: relative;
     top: var(--distTab);
     display: flex;
@@ -148,7 +138,7 @@ body {
     background-size: cover;
     background-position: center;
 }
-/*Foto2*/
+
 .area2 {
     flex-direction: row-reverse;
     height: var(--tamanho);
@@ -169,7 +159,7 @@ body {
     flex: 1;
     padding: var(--distTexto);
 }
-/*Foto3*/
+
 .area3 {
     height: var(--tamanho);
     display: flex;
@@ -191,7 +181,7 @@ body {
     flex: 1;
     padding: var(--distTexto);
 }
-/*Foto4*/
+
 .area4 {
     height: var(--tamanho);
     display:flex;
@@ -212,7 +202,7 @@ body {
     flex:1;
     padding: var(--distTexto);
 }
-/*Foto5*/
+
 .area5 {
     height: var(--tamanho);
     display: flex;
