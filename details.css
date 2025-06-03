@@ -29,10 +29,11 @@ body {
     /* alinhar td */
     display:flex;
     height: 110px;
-    width: 1970px; /*tamano do cabeçario*/
+    width: 100%; /*tamano do cabeçario*/
     position: fixed; /*cabeçario fica preso*/
     align-items: center;
     justify-content: space-between;
+    z-index: 1000;
 }
 
  /* logo */
@@ -78,7 +79,7 @@ body {
     width: 840px;
     height: 390px;
     /* centraliza tudo */
-    margin: 40px auto;
+    margin: 20%auto;
 }
 
 .paralax{
@@ -97,7 +98,6 @@ body {
     align-items: center;
     text-align: center;
     color: rgb(255, 255, 255);
-    -webkit-text-stroke: solid 10px;
     margin:20px 0;
     font-size: 20px;
 }
@@ -121,12 +121,10 @@ body {
 
 /*Espaço para definir o background do texto*/
 .espaco{
-    flex: 4; /* valor (4) que esta definindo uma caixa invisivel (p)
-    para que divida o espaço flex com o P dos textos. quanto maior o numero, mais ele oculpa o espaço (flex) */;
+    flex: 4; /* "flex: 4" define a proporção de espaço ocupado por esse elemento no layout flex. */
 }
 /*Foto1*/
 .area{
-
     position: relative;
     top: var(--distTab);
     display: flex;
