@@ -67,13 +67,14 @@ body {
     text-decoration: none;
     color: #000000;
     font-weight: bold;
-    box-shadow: 2px 2px 10px rgb(0, 0, 0);
+    
 }
 
 /* hover do mouse*/
 .nav-links a:hover {
     background-color: rgb(152, 227, 209);
     color: #000;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0);
 }
 
 /*sobre nós*/
@@ -227,7 +228,7 @@ body {
     height: var(--tamanho);
     display: flex;
     align-items: center;
-    margin: var(--distTab);
+    margin: var(--margem);
 }
 
 .prod5{
@@ -306,6 +307,12 @@ body {
 .contato img {
   width: 50px;
 }
+.noscont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
 
 #grug-container {
   position: fixed; /* agora ele fica flutuando na tela */
@@ -328,6 +335,27 @@ body {
   transition: transform 0.05s linear;
 }
 
+/* Animação base: começa invisível e fora da tela */
+.area, .area2, .area3, .area4, .area5 {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  /* Da direita */
+  .area, .area3, .area5 {
+    transform: translateX(100px);
+  }
+  
+  /* Da esquerda */
+  .area2, .area4 {
+    transform: translateX(-100px);
+  }
+  
+  /* Quando aparecem na tela */
+  .area.ativo, .area2.ativo, .area3.ativo, .area4.ativo, .area5.ativo {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
 /*
 ....................................................................................................

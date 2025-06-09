@@ -97,3 +97,21 @@ function grug() {
 }
 }
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("ativo");
+    } else {
+      entry.target.classList.remove("ativo");
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+// Observar todos os elementos com classe area, area2, ..., area5
+document.querySelectorAll('.area, .area2, .area3, .area4, .area5')
+  .forEach(el => observer.observe(el));
+
+
+
