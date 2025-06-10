@@ -342,21 +342,33 @@ body {
   }
   
   /* Da direita */
-  .area, .area3, .area5 {
+.area, .area3, .area5 {
     transform: translateX(100px);
   }
   
   /* Da esquerda */
-  .area2, .area4 {
+.area2, .area4 {
     transform: translateX(-100px);
   }
   
   /* Quando aparecem na tela */
-  .area.ativo, .area2.ativo, .area3.ativo, .area4.ativo, .area5.ativo {
+.area.ativo, .area2.ativo, .area3.ativo, .area4.ativo, .area5.ativo {
     opacity: 1;
     transform: translateX(0);
   }
+footer {
+    background-image: url("imagems/Background/fundo.jpg"); /* Combina com o tema */
+    border-top: 4px solid rgb(33, 58, 65);
+    padding: 15px 0;
+    margin-top: 40px;
+    text-align: center;
+}
 
+.copy {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(33, 58, 65)
+}
 /*
 ....................................................................................................
 ....................................................................................................
