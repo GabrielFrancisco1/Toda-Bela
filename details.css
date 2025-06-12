@@ -1,424 +1,268 @@
- /*variaveis*/
- :root{
-    --margem:50px;
-    --tamanho:250px;
-    --distTexto:10px;
-    --distTab:0 0 30px 0;
- }
-/*visitados*/
-a,
-a:visited,
-a:hover,
-a:active {
+/* ===============================
+   CONFIGURAÇÕES DE BASE 1080p
+   =============================== */
+:root {
+  --base-viewport-width: 1920;
+  --base-viewport-height: 1080;
+
+  /* Dimensões básicas convertidas */
+  --margem: calc(50 / var(--base-viewport-width) * 100vw);
+  --tamanho: calc(250 / var(--base-viewport-width) * 100vw);
+  --distTexto: calc(10 / var(--base-viewport-width) * 100vw);
+  --distTab: 0 0 calc(30 / var(--base-viewport-height) * 100vh) 0;
+  --header-height: calc(110 / var(--base-viewport-height) * 100vh);
+  --border-thick: calc(3 / var(--base-viewport-width) * 100vw);
+  --shadow-thick: calc(3 / var(--base-viewport-width) * 100vw);
+  --bord-int:  calc(5 / var(--base-viewport-width) * 100vw);
+  --font-xl: calc(40 / 16 * 1rem);
+  --font-lg: calc(27 / 16 * 1rem);
+  --font-md: calc(20 / 16 * 1rem);
+  --logo-height: calc(100 / var(--base-viewport-height) * 100vh);
+  --slider-height: calc(285 / var(--base-viewport-height) * 100vh);
+  --produto-size: calc(250 / var(--base-viewport-width) * 100vw);
+}
+
+/* ===============================
+   RESET E ESTILOS GERAIS
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("imagems/Background/bgFloral.png");
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 1rem; /* base para rem */
+}
+
+a, a:visited, a:hover, a:active {
   color: inherit;
   text-decoration: none;
   outline: none;
 }
 
- /* deixar td no jeito */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
- /* fundo */
-body {
-    background-image: url("imagems/Background/bgFloral.png");
-   /* background-color: #1b1b1b;*/
-    font-family: "Trebuchet MS", sans-serif;
-
-}
-
- /*cabeçario*/
+/* ===============================
+   CABEÇALHO
+   =============================== */
 .header {
-    background-image: url("imagems/Background/fundo.jpg");
-    padding: 20px 40px;
-    /* alinhar td */
-    display:flex;
-    height: 110px;
-    width: 100%; /*tamano do cabeçario*/
-    position: fixed; /*cabeçario fica preso*/
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
+  background-image: url("imagems/Background/fundo.jpg");
+  padding: var(--margem);
+  height: var(--header-height);
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
 }
 
- /* logo */
-.logo img{
-    border: solid 3px rgb(33, 58, 65);
-    border-radius: 35px;
-    height: 100px;
+.logo img {
+  height: var(--logo-height);
+  border: var(--border-thick) solid rgb(33, 58, 65);
+  border-radius: 35px;
 }
 
- /* distancia os botão */
 .nav-links {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: var(--margem);
 }
 
- /* botões */
 .nav-links a {
-    position: relative;
-    border: solid 3px rgb(33, 58, 65);
-    padding: 8px;
-    border-radius: 15px;
-    background-color: rgb(187, 250, 236);
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    
+  padding: 0.5em 1em;
+  border: var(--border-thick) solid rgb(33, 58, 65);
+  border-radius: 15px;
+  background-color: rgb(187, 250, 236);
+  font-weight: bold;
 }
 
-/* hover do mouse*/
 .nav-links a:hover {
-    background-color: rgb(152, 227, 209);
-    color: #000;
-    box-shadow: 2px 2px 10px rgb(0, 0, 0);
+  background-color: rgb(152, 227, 209);
+  box-shadow: var(--shadow-thick) var(--shadow-thick) 10px rgb(0, 0, 0);
 }
 
-/*sobre nós*/
+/* ===============================
+   SOBRE NÓS
+   =============================== */
 .sobre-nos {
-    scroll-margin-top: 240px; 
-    text-align: center;
-    display:block;
-    border: solid 5px rgb(33, 58, 65);
-    border-radius: 50px;
-    background-image: url("imagems/Background/fundo.jpg");
-    width: 840px;
-    height: 390px;
-    /* centraliza tudo */
-    margin: 10%auto;
+  scroll-margin-top: calc(240 / var(--base-viewport-height) * 100vh);
+  text-align: center;
+  border: var(--border-thick) solid rgb(33, 58, 65);
+  border-radius: 50px;
+  background-image: url("imagems/Background/fundo.jpg");
+  width: calc(840 / var(--base-viewport-width) * 100vw);
+  margin: 10% auto;
+  padding: 2%;
 }
 
-.paralax{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 130%;
-   /* background: linear-gradient(180deg, rgb(187, 250, 246), rgb(18, 77, 65)); /* azul → roxo */
-    z-index: -1;
-    animation: gradientMove 10s infinite alternate;
+/* ===============================
+   LINHA PRODUTOS
+   =============================== */
+.linhaProd {
+  scroll-margin-top: calc(120 / var(--base-viewport-height) * 100vh);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgb(187, 250, 236);
+  font-size: var(--font-xl);
+  margin: 2% 0;
 }
 
-/*separação*/
-.linhaProd{
-    scroll-margin-top: 120px; 
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: rgb(187, 250, 236);
-    margin:20px 0;
-    font-size: 20px;
-}
 .linhaProd::before,
 .linhaProd::after {
-    content: "";
-    flex: 1;
-    margin: 0 50px;
-    border-bottom: 4px solid rgb(187, 250, 236);
+  content: "";
+  flex: 1;
+  margin: 0 var(--margem);
+  border-bottom: calc(4 / var(--base-viewport-width) * 100vw) solid rgb(187, 250, 236);
 }
 
-.linhaProd::before {
-    margin-right: 20px;
-}
-.linhaProd::after {
-    margin-left: 20px;
-}
-/*fim da separação*/
-
-/*Exibição de produtos*/
-
-/*Espaço para definir o background do texto*/
-.espaco{
-    flex: 1; /* "flex: 4" define a proporção de espaço ocupado por esse elemento no layout flex. */
-}
-/*Foto1*/
-.area{
-    position: relative;
-    top: var(--distTab);
-    display: flex;
-    align-items: center;
-    margin: var(--distTab);
+/* ===============================
+   PRODUTOS
+   =============================== */
+.espaco {
+  flex: 1;
 }
 
-.desc{
-    text-align: center;
-    flex:1;
-    padding: var(--distTexto)
+.area, .area2, .area3, .area4, .area5 {
+  position: relative;
+  top: var(--distTab);
+  display: flex;
+  align-items: center;
+  margin: var(--distTab);
 }
 
-.prod {
-    margin: var(--margem);
-    width: var(--tamanho);
-    height: var(--tamanho);
-    background-image: url(imagems/produtos/foto1.jpg);
-    background-size: cover;
-    background-position: center;
-}
-/*Foto2*/
-.area2 {
-    flex-direction: row-reverse;
-    height: var(--tamanho);
-    display: flex;
-    margin: var(--distTab);
-    align-items: center;
-}
-.prod2 {
-    margin: var(--margem);
-    height: var(--tamanho);
-    width: var(--tamanho);
-    background-size: cover;
-    background-position: left;
-    background-image: url(imagems/produtos/foto2.jpg);
+.area2, .area4 {
+  flex-direction: row-reverse;
 }
 
-.desc2{
-    text-align: center;
-    flex: 1;
-    padding: var(--distTexto);
-}
-/*Foto3*/
-.area3 {
-    height: var(--tamanho);
-    display: flex;
-    align-items: center;
-    margin: var(--distTab);
+.desc, .desc2, .desc3, .desc4, .desc5 {
+  text-align: center;
+  flex: 1;
+  padding: var(--distTexto);
 }
 
-.prod3{
-    margin: var(--margem);
-    height: var(--tamanho);
-    width: var(--tamanho);
-    background-image: url(imagems/produtos/foto3.jpg);
-    background-position: center;
-    background-size: cover;
+.prod, .prod2, .prod3, .prod4, .prod5 {
+  margin: var(--margem);
+  width: var(--tamanho);
+  height: var(--tamanho);
+  background-size: cover;
+  background-position: center;
+  border-radius: 40px 0;
+  border: var(--border-thick) solid rgb(33, 58, 65);
+  box-shadow: inset 0 0 0 var(--shadow-thick) rgb(187, 250, 236);
 }
 
-.desc3 {
-    text-align: center;
-    flex: 1;
-    padding: var(--distTexto);
-}
-/*Foto4*/
-.area4 {
-    height: var(--tamanho);
-    display:flex;
-    align-items: center;
-    flex-direction: row-reverse;
-}
-
-.prod4{
-    width: var(--tamanho);
-    height: var(--tamanho);
-    background-size: cover;
-    background-position: center;
-    background-image: url(imagems/produtos/foto4.jpg);
-    margin: var(--margem);
-}
-
-.desc4{
-    text-align: center;
-    flex:1;
-    padding: var(--distTexto);
-}
-/*Foto5*/
-.area5 {
-    height: var(--tamanho);
-    display: flex;
-    align-items: center;
-    margin: var(--margem);
-}
-
-.prod5{
-    margin: var(--margem);
-    height: var(--tamanho);
-    width: var(--tamanho);
-    background-image: url(imagems/produtos/foto5.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.desc5 {
-    text-align: center;
-    flex: 1;
-    padding: var(--distTexto);
-}
-/*Formatação dos produtos*/
-.foto{
-    border-radius: 40px 0;
-    border: solid 5px rgb(33, 58, 65);
-    box-shadow: inset 0px 0px 0px 3px  rgb(187, 250, 236);
-}
+.prod { background-image: url(imagems/produtos/foto1.jpg); }
+.prod2 { background-image: url(imagems/produtos/foto2.jpg); }
+.prod3 { background-image: url(imagems/produtos/foto3.jpg); }
+.prod4 { background-image: url(imagems/produtos/foto4.jpg); }
+.prod5 { background-image: url(imagems/produtos/foto5.jpg); }
 
 .texto {
-    font-size: 27px;
-    border: solid 4px rgb(33, 58, 65)  ;
-    background-image: url(imagems/Background/fundo.jpg);
-    border-radius: 20px;
+  font-size: var(--font-lg);
+  border: var(--border-thick) solid rgb(33, 58, 65);
+  background-image: url(imagems/Background/fundo.jpg);
+  border-radius: 20px;
 }
 
+/* ===============================
+   SLIDER
+   =============================== */
 #slider-wrapper {
-    bottom: 10px;
-    width: 100%;
-    overflow: hidden;
-    height: 260px;
-    position: relative;
+  bottom: 10px;
+  width: 100%;
+  overflow: hidden;
+  height: var(--slider-height);
+  position: relative;
 }
 
 #slider {
-    display: flex;
-    width: max-content;
+  display: flex;
+  width: max-content;
+  will-change: transform;
 }
 
 .produto {
-    position: relative;
-    top: 10px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border: 2px solid rgb(187, 250, 236);
-    box-shadow: 0px 0px 0px 5px rgb(33, 58, 65);
-    margin-right: 20px;
-    border-radius: 40px;
-}
-#slider {
-    will-change: transform;
+  margin-top: calc(4 / var(--base-viewport-height) * 100vh);
+  width: var(--produto-size);
+  height: var(--produto-size);
+  object-fit: cover;
+  border: calc(4 / var(--base-viewport-width) * 100vw) solid rgb(187, 250, 236);
+  box-shadow: 0 0 0 var(--bord-int) rgb(33, 58, 65);
+  margin-right: calc(20 / var(--base-viewport-width) * 100vw);
+  border-radius: calc(40 / var(--base-viewport-width) * 100vw);
 }
 
+/* Animações de entrada para produtos (já preparadas para responsividade) */
+.area, .area2, .area3, .area4, .area5 {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Animação da direita */
+.area, .area3, .area5 {
+  transform: translateX(calc(100 / 1920 * 100vw));
+}
+
+/* Animação da esquerda */
+.area2, .area4 {
+  transform: translateX(calc(-100 / 1920 * 100vw));
+}
+
+/* Quando entra na viewport */
+.area.ativo,
+.area2.ativo,
+.area3.ativo,
+.area4.ativo,
+.area5.ativo {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* ===============================
+   CONTATOS - ORGANIZADO EM BLOCOS
+   =============================== */
 .cont {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px; /* espaçamento entre os blocos de contato */
-  margin-top: 50px;
+  flex-wrap: wrap;
+  gap: calc(40 / var(--base-viewport-width) * 100vw);
+  margin-top: 5vh;
   color: rgb(187, 250, 236);
-  flex-wrap: wrap; /* para quebrar linha em telas pequenas */
 }
 
 .contato {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: calc(10 / var(--base-viewport-width) * 100vw);
   text-decoration: none;
   color: inherit;
+  width: calc(160 / var(--base-viewport-width) * 100vw);
 }
+
 .contato img {
-  width: 50px;
-}
-.noscont {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-#grug-container {
-  position: fixed; /* agora ele fica flutuando na tela */
-  top: 50%;
-  left: 0;
   width: 100%;
-  height: 300px;
-  transform: translateY(-50%); /* centraliza verticalmente */
-  pointer-events: none; /* deixa clique passar por ele */
-  z-index: 9999; /* fica por cima de tudo */
+  max-width: calc(60 / var(--base-viewport-width) * 100vw);
+  height: auto;
 }
 
-
-#grug {
-  /* essas regras agora vão via JS, mas mantemos por segurança */
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 150px;
-  transition: transform 0.05s linear;
+.noscont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+  gap: calc(15 / var(--base-viewport-width) * 100vw);
 }
 
-/* Animação base: começa invisível e fora da tela */
-.area, .area2, .area3, .area4, .area5 {
-    opacity: 0;
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  
-  /* Da direita */
-.area, .area3, .area5 {
-    transform: translateX(100px);
-  }
-  
-  /* Da esquerda */
-.area2, .area4 {
-    transform: translateX(-100px);
-  }
-  
-  /* Quando aparecem na tela */
-.area.ativo, .area2.ativo, .area3.ativo, .area4.ativo, .area5.ativo {
-    opacity: 1;
-    transform: translateX(0);
-  }
-footer {
-    background-image: url("imagems/Background/fundo.jpg"); /* Combina com o tema */
-    border-top: 4px solid rgb(33, 58, 65);
-    padding: 15px 0;
-    margin-top: 40px;
-    text-align: center;
+.ghl {
+  width: calc(50 / var(--base-viewport-width) * 100vw);
 }
 
-.copy {
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(33, 58, 65)
+.gh {
+  color: rgb(187, 250, 236);
+  font-size: var(--font-md);
+  text-align: center;
 }
-/*
-....................................................................................................
-....................................................................................................
-..............................................:.....................................................
-.........................................:.:*#+.....................................................
-.......................................:-*##%%%##%-:+==-.:=--:=-*+-::...............................
-....................................-:+##%%%@%@@%@@@##%#%#%#%%%%%%%%%+-.............................
-................................::-=**#*+**##***#%@@@%%%%%%%%%%@@%%%%%%#-...........................
-..............................=+*####*#***+++*#%%%%@@%###%%%%%%%%%%%%@%%%+-.........................
-..........................:+*+*#*##*+++*#%%%%%%%%%%%@@%####%%%%@%%%%%%%%%*:.........................
-......................:=+**##*###%%+=-=====++*++++*#%%%%%%%%@@@%%%%%%@@%%@+.........................
-...................==+*#%%%%%%#%%%%#++++====*#%%#**#%%%%%%%@@@@@%%@@@%%%%@@=........................
-................===#%##%@%%@%%%%@@@%***=-==+*##%%#*%%%%%%%%@@@@@@@@@%@@@%%@%-.......................
-................=%%%%@@@@@@@%%@@%@@@**=====++**####%%%%%%%@@@@@@@@@@@%%%%@@%+.......................
-................:*#%@@@@@@@@@@@%%@@@%*+==+**#####%%%%%%%%%@@@@@@@@@@@@@@@@@@%-......................
-.................=*%%@@@@@@@@@@@@@@@@%*+++*#####%%%%%#%%%@@@@@@@@@@@@@@@@@@%%#=.....................
-................-++*%%@@@@@@@@%%@@@@@@%****####%%%%%%%%@@@@@@@@@@@@@@@@@@@@%%%%*:...................
-..............:=+++*##%%@@@@@@@@@@@@%%%%######%%%%%%%%@@@@@@@@@@@@@@@@@@@@%%%#%%%=..................
-............:=++++++**#%@%%%@@@@@@@%@@@@@%###%%%%%@@@@@@@@@@@@@@@@@@@@@@@@%####%%%=.................
-...........-==+++++***##@%%%@@%@%%%%@%%%@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@%%######%%#=................
-..........-==+=+++++***###%%%@%%@%@@%%%%%%%@%%%%@@@@@@@@@@@@@@@@@@@@@@+%%%%%##%%%%%#-...............
-........:==+++**++****###%%@@%@@@%@@@%%%%%%@%%%%%@@@@@@@@@@@@@@@@@@@+:.:+%%%%%%%%%%%*:..............
-.......-=+++**###****###%%%@%%%@@%@@%@%%%%%%%%@@@@@%%@@@@@@@@@@@@@**.....-#%#%#%%%%%%+..............
-......-+++++**##%%#######%%%%%%%%@@@%@%%%@@@@@@@@@@@@@@@@@@@@@@@@#:........-########%%-.............
-.....-==++++**##%%%%#####%###@%@@@@@%@%%%@@@@@@@@@@@@@@@@@@@@@@@@#-..........-*#####%%#.............
-....:===+++***##%@@%###+:.-###%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%+............:+#####%+............
-....-==+++++***#%%%%-.....=**#%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*:..............-####%:...........
-....-==+++++***#%%%#.....-#*#%%@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%+...............:+##%:...........
-....-==++++****#%%%=.....*####%%%%@@@@@@@@@@@@@@@@@@@@@@@@@%%@@@@@#=................-###............
-....-==++++***##%%*......*####%%%%%%@@@@@@@@@@@@@@@@@@@@%@@@@@%@@@#:.............:***##*............
-....:==++++++*#%%*.......=####%%%@%@@@@@@@@@@@@@@%@@@@@@%@@@%@%@%%*:.............=*##%##............
-.....======++*###:.......*#####%%%%@@@@@@@@@@@@@@%%%%%%%%%@%%%%%%%#:...............+%#%+............
-.....:=++++++*##-........-=#####%%%%@@@%%@@@@@@%%%%%%%#%%%####%#%%%-................:=:.............
-......-+++++*##=..........+*####%%%%%%%%%%%%%%%%%%%%###**########%=.................................
-......:===++***+:.........=+++*#%%%%%%%%%%%%%%%%*%%######*#########=................................
-......-+===##*==+=........=++***##%#--::-=+=:=+*:-+:..-*%########*-.................................
-......=++*+*:...=*........-***#####*....................+#######%%+.................................
-......*+++=+*..............:*######-.....................-*#####%%*:................................
-.....:***+==*:...............=%%%#-..................::---+#**###%#+++++++++++++++==-::.............
-......=+***:.................-*%%*.....:-=+**#####%%%%%%%%%%###*#%%%%%%%%%%########%##%%####**=.....
-.......:++-...............:=+*%@%**###%%%%%%%%%%%%%%%%%%%%%%%%#*#%%%%%%%%%%%%%%%%%%%%%%%%%%##+=:....
-.......................-***#%@@@@@%@%%%%%%%%%%%%%%%%%%%%%%%%%%%###%%%%%%%%%%%%%%%%%%%%#*-...........
-.......................:=*%%%%%%@@%@@@@@@@@@@@@@@@%%%%%%%%%%%%%##**#%%%%%#**+-:.....................
-..................:=*%%%%%%%%%%%%%%%%%%##**#############%%%@@@@@%#####*-............................
-.................=#%%%%%%%%%%%%%%#=:::::::::::::::::::::::::---:-++*+++-............................
-................=#%%%%%%%%%%%%%*-...................................................................
-................=#%%%%%%%%%%#=:.....................................................................
-................-#%%%%%%%%+:........................................................................
-...............=#%%%%%#+=#%*:.......................................................................
-..............:*####%%=.............................................................................
-....................................................................................................
-.................................................................................................... */
-
