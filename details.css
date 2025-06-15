@@ -1,6 +1,21 @@
 /* ===============================
    CONFIGURAÇÕES DE BASE 1080p
    =============================== */
+
+/* Forçar tamanho da tela para que oq saia
+  horintal nao atrapalhe na dimensão*/
+
+   html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden; /* bloqueia rolagem horizontal */
+    overflow-y: auto;   /* permite rolagem vertical só se necessário */
+    margin: 0;
+    padding: 0;
+  }
+
+/* variaveis*/
+
 :root {
   --base-viewport-width: 1920;
   --base-viewport-height: 1080;
@@ -227,7 +242,7 @@ a, a:visited, a:hover, a:active {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: calc(40 / var(--base-viewport-width) * 100vw);
+  gap: calc(60 / var(--base-viewport-width) * 100vw);
   margin-top: 5vh;
   color: rgb(187, 250, 236);
 }

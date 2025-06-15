@@ -40,7 +40,7 @@ function grug() {
     grug.id = "grug";
     grug.style.position = "absolute";
     grug.style.left = "0";
-    grug.style.top = "0";
+    grug.style.top = "30%";
     grug.style.width = "calc(150 / 1920 * 100vw)";
     grug.style.transition = "transform 0.05s linear";
     container.appendChild(grug);
