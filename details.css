@@ -29,11 +29,12 @@
   --border-thick: calc(3 / var(--base-viewport-width) * 100vw);
   --shadow-thick: calc(3 / var(--base-viewport-width) * 100vw);
   --bord-int:  calc(5 / var(--base-viewport-width) * 100vw);
+  --radioProd: calc(40 / var(--base-viewport-width)*100vw);
   --font-xl: calc(40 / 16 * 1rem);
   --font-lg: calc(27 / 16 * 1rem);
   --font-md: calc(20 / 16 * 1rem);
   --logo-height: calc(100 / var(--base-viewport-height) * 100vh);
-  --slider-height: calc(285 / var(--base-viewport-height) * 100vh);
+  --slider-height: calc(300 / var(--base-viewport-height) * 100vh);
   --produto-size: calc(250 / var(--base-viewport-width) * 100vw);
 }
 
@@ -163,7 +164,7 @@ a, a:visited, a:hover, a:active {
   height: var(--tamanho);
   background-size: cover;
   background-position: center;
-  border-radius: 40px 0;
+  border-radius: var(--radioProd) 0;
   border: var(--border-thick) solid rgb(33, 58, 65);
   box-shadow: inset 0 0 0 var(--shadow-thick) rgb(187, 250, 236);
 }
@@ -178,14 +179,14 @@ a, a:visited, a:hover, a:active {
   font-size: var(--font-lg);
   border: var(--border-thick) solid rgb(33, 58, 65);
   background-image: url(imagems/Background/fundo.jpg);
-  border-radius: 20px;
+  border-radius: calc(20 / var(--base-viewport-width)*100vw);
 }
 
 /* ===============================
    SLIDER
    =============================== */
 #slider-wrapper {
-  bottom: 10px;
+  bottom: calc(15/var(--base-viewport-height) * 100vh);
   width: 100%;
   overflow: hidden;
   height: var(--slider-height);
@@ -280,4 +281,14 @@ a, a:visited, a:hover, a:active {
   color: rgb(187, 250, 236);
   font-size: var(--font-md);
   text-align: center;
+  padding-bottom:0.7% ;
+}
+
+.copy {
+  background-color: rgb(69, 226, 200);
+  height: calc(70/var(--base-viewport-height) * 100vh);
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.3%;
+  justify-content: center;
 }

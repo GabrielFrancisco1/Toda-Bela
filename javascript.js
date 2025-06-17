@@ -48,7 +48,7 @@ function grug() {
     let x = 0;
     const amplitude = 60;
     const frequencia = 50;
-    const speed = 15;
+    const speed = 10;
     const larguraTela = container.offsetWidth;
 
     const mover = setInterval(() => {
