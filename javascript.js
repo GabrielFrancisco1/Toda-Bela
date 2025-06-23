@@ -41,7 +41,12 @@ function grug() {
     grug.style.position = "absolute";
     grug.style.left = "0";
     grug.style.top = "30%";
-    grug.style.width = "calc(150 / 1920 * 100vw)";
+    // Detecta tamanho da tela
+    if (window.innerWidth <= 768) {
+      grug.style.width = "15vh"; // mobile
+    } else {
+    grug.style.width = "calc(150 / 1920 * 100vw)"; // desktop
+    }
     grug.style.transition = "transform 0.05s linear";
     container.appendChild(grug);
 

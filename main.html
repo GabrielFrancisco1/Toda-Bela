@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toda Bella</title>
     <link rel="shortcut icon" type="image/x-icon" href="/imagems/tdbelaicon.png">
-    <link rel="stylesheet" type="text/css" href="details.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <!-- cabeçario -->
@@ -14,8 +14,8 @@
     <img src="imagems/tdbela.png" alt="toda bella">
     </div>
     <nav class="nav-links">
-        <a href="javascript:void(0)" onclick="prodrol2()">Sobre nós</a>
-        <a href="javascript:void(0)" onclick="prodrol()">Produtos</a>
+        <a href="javascript:void(0)" onclick="prodrol2()" >Sobre nós</a>
+        <a href="javascript:void(0)" onclick="prodrol()" >Produtos</a>
         <a href="javascript:void(0)" onclick="prodrol3()">contatos</a>
     </nav>
 </header>
@@ -23,7 +23,7 @@
 <div class="paralax"></div> <!--paralax-->
     <!--sobre nos-->
 <div class="sobre-nos" id="sobre">
-    <h1 style="-webkit-text-stroke: 1.4px rgb(238, 25, 89); margin-bottom: 10px;">💖 Sobre Nós – Tudo Bella</h1>
+    <h1 style="-webkit-text-stroke: 1.9px rgb(238, 25, 89); margin-bottom: 10px; color: rgb(207, 175, 193);">💖 Sobre Nós – Tudo Bella</h1>
     <h2 style="margin-bottom: 20px;">Seja bem-vindo à Tudo Bella!</h2>
     <h2 style="margin-bottom: 10px;">localizados na Rua Minas Gerais, nº 531, Centro – Bálsamo/SP, e somos especializados na venda de bijuterias e acessórios para adultos e crianças.</h2>
     <h2 style="margin-bottom: 10px;"> Na Tudo Bella, acreditamos que cada detalhe faz a diferença. Por isso, selecionamos com carinho peças que unem estilo, beleza e qualidade, tudo com preços 
@@ -32,7 +32,7 @@
     sua beleza! ✨</h2>
       <iframe
        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.399680515275!2d-49.585293125466585!3d-20.734588363865537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bda700768129b1%3A0x91a9f3289371215b!2sToda%20bella%20biju!5e0!3m2!1spt-BR!2sbr!4v1750196082710!5m2!1spt-BR!2sbr"
-       style="border:0; width:35%;padding-top: 2%;border: solid 3px rgb(33, 58, 65);"
+       class="mapa"
        allowfullscreen=""
        loading="lazy"
        referrerpolicy="no-referrer-when-downgrade">
@@ -108,29 +108,29 @@
 </div>
 
  <br>
-<div style="background-color: aquamarine; width: 100% ; height: 4px;">
+<div style="background-color: aquamarine; width: 100% ; height: 4px;" class="linhaR">
 </div>
 
 <br>
 <div class="cont" id="contatos">
   <!-- Instagram -->
   <a class="contato" href="https://www.instagram.com/todabellabalsamo/" target="_blank">
-    <img src="imagems/contatos/instagram.png" alt="Instagram">
+    <img src="imagems/contatos/instagram.png" class="imgc" alt="Instagram">
     <p>@todabellabalsamo</p>
   </a>
 
   <!-- WhatsApp -->
   <a class="contato" href="https://wa.me/5517997808138?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos%20%F0%9F%98%8D%F0%9F%98%81" target="_blank">
-    <img src="imagems/contatos/whatsapp.png" alt="WhatsApp">
-    <p>@todabellabalsamo</p>
+    <img src="imagems/contatos/whatsapp.png" class="imgc" alt="WhatsApp">
+    <p>17 99780-8138</p>
   </a>
 </div>
 
 </div>
 <div class="noscont">
     <!--nossos contatos-->
-  <img onclick="grug()" class="ghl" src="imagems/contatos/github.png" style="width: calc(50 / var(--base-viewport-width) * 100vw);">
-  <a href="https://github.com/GabrielFrancisco1/Toda-Bela" target="_blank" class="gh" style="color: rgb(187, 250, 236);">Desenvolvedores</a>
+  <img onclick="grug()" class="ghl" src="imagems/contatos/github.png">
+  <a href="https://github.com/GabrielFrancisco1/Toda-Bela" class="gh" target="_blank" class="h" style="color: rgb(187, 250, 236);">Desenvolvedores</a>
 </div>
     <!--grug-->
   <div id="grug-container"></div>
